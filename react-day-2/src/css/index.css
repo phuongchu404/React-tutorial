@@ -1,0 +1,38 @@
+*{
+    border-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+.app{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.notification{
+    margin: 10px auto;
+}
+.input-form{
+    text-align: center;
+}
+.input-form .input-info{
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    margin: 20px 10px;
+    border-radius: 4px;
+}
+.input-form .button-submit {
+    display: block;
+    margin: 0 auto;
+    background-color: red;
+    height: 30px;
+    width: 250px;
+    line-height: 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: white;
+}
+
+.input-form .input-info::placeholder{
+    padding-left: 15px;
+}

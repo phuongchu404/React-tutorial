@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // our code goes here
+        const rootElement = document.querySelector('#root');
+        const date = new Date();
+        const currentDate = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+        const styleCommons = {
+            text
+        }
+        const header =(
+            <header>
+                <h1>{currentDate}</h1>
+            </header>
+        )
+        const personalInformation ={
+            name: 'Nguyễn Văn A',
+            age: 18,
+            dateOfBirth: '2000-01-01',
+            address: 'Vĩnh Phúc',
+            job: 'Sinh viên',
+            phoneNumber: '0123456789'
+        }
+        const subject = ['toán','văn','anh'];
+        const main = (
+            <main 
+            style={{border: '2px solid black', fontSize:'15px', color:'blue'}}
+            >
+                <p>Thông tin cá nhân</p>
+                <ol>
+                    <li>Tuổi: {date.getFullYear() - new Date(personalInformation.dateOfBirth).getFullYear()}</li>
+                    <li>Ngày sinh: {personalInformation.dateOfBirth}</li>
+                    <li>Tên: {personalInformation.name}</li>
+                    <li>Quê quán: {personalInformation.address}</li>
+                    <li>Nghề nghiệp: {personalInformation.job}</li>
+                    <li>Số điện thoại: {personalInformation.phoneNumber}</li>
+                    <li>Môn học: {subject.join(', ')}</li>
+                </ol>
+            </main>
+        )
+
+        const style = {
+            marginTop: 50,
+            border: '1px solid orange',
+            color: 'green',
+            fontSize: '20px',
+        }
+        const footer =(
+            <footer style = {style}>
+                <p>Copy right <b>2022</b></p>
+            </footer>
+        )
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+        ReactDOM.render(app, rootElement);
+    </script>
+</body>
+</html>
